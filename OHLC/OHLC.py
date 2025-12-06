@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 # ==========================================
-# 1. Core Calculation Function
+# 1. Core Calculation Function (保持不变)
 # ==========================================
 
 def calc_norm(series, window=20):
@@ -22,26 +22,20 @@ def calc_norm(series, window=20):
     return res
 
 def calculate_34_factors(df):
-    """
-    Input: OHLCV DataFrame
-    Output: DataFrame with 34 calculated factors
-    """
+    # ... (这部分代码保持不变) ...
     # Preprocessing: Convert column names to lowercase
     df.columns = [c.lower() for c in df.columns]
     
-    # Handle "N.A." strings and ensure numeric types
     for col in ['open', 'high', 'low', 'close', 'volume']:
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors='coerce')
     
-    # Base variables
     o = df['open']
     h = df['high']
     l = df['low']
     c = df['close']
     v = df['volume']
     
-    # Pre-calculate common lags
     c_lag_4 = c.shift(4)
     c_lag_19 = c.shift(19)
     
@@ -73,7 +67,6 @@ def calculate_34_factors(df):
     factors['OHLC-close_lag_2'] = calc_norm(c.shift(1) / c_lag_19, 20)
     factors['OHLC-close_lag_3'] = calc_norm((c.shift(2) / c_lag_4).abs(), 19)
     factors['OHLC-close_lag_4'] = calc_norm(c.shift(3) / c_lag_19, 20)
-    # Fixed: Changed denominator to c_lag_19 to avoid division by zero
     factors['OHLC-close_lag_5'] = calc_norm((c.shift(4) / c_lag_19).abs(), 20)
 
     # --- MA Series ---
@@ -107,12 +100,11 @@ def calculate_34_factors(df):
 
 def main():
     # 1. Define Paths
-    # script_dir: Where this script is located (D:\...\RL-FA25-Final\OHLC)
     script_dir = os.path.dirname(os.path.abspath(__file__))
     factor_output_dir = os.path.join(script_dir, 'factor_outputs')
     os.makedirs(factor_output_dir, exist_ok=True)
     
-    # data_file: consolidated CSV (D:\...\RL-FA25-Final\data.csv)
+    # data_file: consolidated CSV
     data_file = os.path.join(script_dir, '..', 'data.csv')
     if not os.path.exists(data_file):
         print(f"Data file not found: {data_file}")
@@ -131,7 +123,7 @@ def main():
 
     raw_df['DateTime'] = pd.to_datetime(raw_df['DateTime'])
 
-    # Detect tickers from column prefixes (e.g., VOO_Close -> VOO)
+    # Detect tickers
     tickers = sorted({col.split('_', 1)[0] for col in raw_df.columns if col != 'DateTime'})
     if not tickers:
         print("No ticker columns detected in data file.")
@@ -169,7 +161,20 @@ def main():
         df.set_index('datetime', inplace=True)
 
         try:
+            # 1. 计算因子
             df_factors = calculate_34_factors(df)
+            
+            # ========================================================
+            # CRITICAL FIX FOR LOOK-AHEAD BIAS
+            # ========================================================
+            # Shift all calculated factors down by 1 row.
+            # Value at index T will now contain factors calculated from T-1 data.
+            # This ensures that at time T, we are not seeing T's Close/High/Low.
+            df_factors = df_factors.shift(1)
+            # ========================================================
+
+            # 2. Add ticker column AFTER shifting
+            # (Otherwise the first row's ticker would become NaN)
             df_factors['ticker'] = ticker
             
             cols = ['ticker'] + [c for c in df_factors.columns if c != 'ticker']
@@ -187,13 +192,12 @@ def main():
         factor_columns = [c for c in panel_df.columns if c != 'ticker']
         
         # ==========================================
-        # SAVE RAW DATA -> to OHLC folder (script_dir)
+        # SAVE RAW DATA (Includes Shifted NaNs)
         # ==========================================
         output_path = os.path.join(script_dir, 'OHLC_34.csv')
         panel_df.to_csv(output_path)
         print(f"\nSuccess! Raw file saved to: {output_path}")
 
-        # Save each factor to its own raw CSV
         print("Saving per-factor raw files...")
         for factor in factor_columns:
             factor_df = panel_df[['ticker', factor]].reset_index()
@@ -218,16 +222,16 @@ def main():
             print("✅ Factor calculation passed: No entirely empty columns found.")
             
             rows_with_nan = panel_df.isnull().any(axis=1).sum()
-            print(f"\n✅ Detected warm-up NaNs: {rows_with_nan} (Normal behavior)")
+            print(f"\n✅ Detected warm-up NaNs: {rows_with_nan} (Includes shift(1) lag)")
 
             print("-" * 40)
             print("Generating final cleaned version...")
             
-            # Drop rows with NaN
+            # Drop rows with NaN (Removes the first ~40 rows including the shift(1) row)
             df_clean = panel_df.dropna()
             
             # ==========================================
-            # SAVE CLEAN DATA -> to OHLC folder (script_dir)
+            # SAVE CLEAN DATA
             # ==========================================
             clean_path = os.path.join(script_dir, 'OHLC_34_clean.csv')
             df_clean.to_csv(clean_path)
@@ -235,7 +239,6 @@ def main():
             print(f"🎉 Cleaning complete! Valid data rows: {len(df_clean)}")
             print(f"Final ready-to-use file: {clean_path}")
 
-            # Save each factor to its own clean CSV
             print("Saving per-factor clean files...")
             for factor in factor_columns:
                 factor_df = df_clean[['ticker', factor]].reset_index()
