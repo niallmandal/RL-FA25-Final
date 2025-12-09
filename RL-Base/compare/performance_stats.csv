@@ -1,0 +1,5 @@
+Strategy,Total Return,Ann Return,Sharpe,Max DD
+PPO_Agent,-2.02%,-18.27%,-3.08,-2.60%
+Buy_Hold_Equal,-0.18%,-1.74%,-0.20,-3.03%
+Hold_VOO,-0.03%,-0.32%,-0.02,-5.57%
+Pairs_Trading,3.54%,41.08%,9.87,-0.57%
