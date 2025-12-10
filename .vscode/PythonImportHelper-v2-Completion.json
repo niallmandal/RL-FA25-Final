@@ -9,6 +9,14 @@
         "documentation": {}
     },
     {
+        "label": "Timestamp",
+        "importPath": "pandas",
+        "description": "pandas",
+        "isExtraImport": true,
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
         "label": "numpy",
         "kind": 6,
         "isExtraImport": true,
@@ -97,6 +105,166 @@
         "documentation": {}
     },
     {
+        "label": "LinearRegression",
+        "importPath": "sklearn.linear_model",
+        "description": "sklearn.linear_model",
+        "isExtraImport": true,
+        "detail": "sklearn.linear_model",
+        "documentation": {}
+    },
+    {
+        "label": "Lasso",
+        "importPath": "sklearn.linear_model",
+        "description": "sklearn.linear_model",
+        "isExtraImport": true,
+        "detail": "sklearn.linear_model",
+        "documentation": {}
+    },
+    {
+        "label": "Ridge",
+        "importPath": "sklearn.linear_model",
+        "description": "sklearn.linear_model",
+        "isExtraImport": true,
+        "detail": "sklearn.linear_model",
+        "documentation": {}
+    },
+    {
+        "label": "LinearRegression",
+        "importPath": "sklearn.linear_model",
+        "description": "sklearn.linear_model",
+        "isExtraImport": true,
+        "detail": "sklearn.linear_model",
+        "documentation": {}
+    },
+    {
+        "label": "statsmodels.api",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "statsmodels.api",
+        "description": "statsmodels.api",
+        "detail": "statsmodels.api",
+        "documentation": {}
+    },
+    {
+        "label": "seaborn",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "seaborn",
+        "description": "seaborn",
+        "detail": "seaborn",
+        "documentation": {}
+    },
+    {
+        "label": "scipy.cluster.hierarchy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "scipy.cluster.hierarchy",
+        "description": "scipy.cluster.hierarchy",
+        "detail": "scipy.cluster.hierarchy",
+        "documentation": {}
+    },
+    {
+        "label": "arch_model",
+        "importPath": "arch",
+        "description": "arch",
+        "isExtraImport": true,
+        "detail": "arch",
+        "documentation": {}
+    },
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "warnings",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "warnings",
+        "description": "warnings",
+        "detail": "warnings",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "norm",
+        "importPath": "scipy.stats",
+        "description": "scipy.stats",
+        "isExtraImport": true,
+        "detail": "scipy.stats",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "holidays",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "holidays",
+        "description": "holidays",
+        "detail": "holidays",
+        "documentation": {}
+    },
+    {
         "label": "annotations",
         "importPath": "__future__",
         "description": "__future__",
@@ -122,36 +290,11 @@
         "documentation": {}
     },
     {
-        "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
         "label": "Path",
         "importPath": "pathlib",
         "description": "pathlib",
         "isExtraImport": true,
         "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "math",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "math",
-        "description": "math",
-        "detail": "math",
-        "documentation": {}
-    },
-    {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
         "documentation": {}
     },
     {
@@ -296,6 +439,384 @@
         "description": "RL_model.RL_model_v2",
         "peekOfCode": "ppo_agent = PPOAgent(obs_dim=env_train.obs_dim, action_dim=env_train.n_assets, lr=3e-4, gamma=0.99, lam=0.95, clip_ratio=0.2)\ntrain_ppo_on_env(env_train, ppo_agent, total_steps=50_000, rollout_horizon=512)\ndf_account_value, stats = backtest_on_env(\n    env_test,\n    ppo_agent,\n    idx_test,\n    freq_per_year=252 * 390,\n    plot=True,\n    save_prefix=\"ppo_oos\",\n)",
         "detail": "RL_model.RL_model_v2",
+        "documentation": {}
+    },
+    {
+        "label": "stats",
+        "kind": 2,
+        "importPath": "cmds.hw2_helper",
+        "description": "cmds.hw2_helper",
+        "peekOfCode": "def stats(data, portfolio = None, portfolio_name = 'Portfolio', annualize = True):\n    if portfolio is None:\n        returns = data\n    else:\n        returns = data @ portfolio\n    output = returns.agg(['mean','std'])\n    output.loc['sharpe'] = output.loc['mean'] / output.loc['std']\n    if annualize == True:\n        output.loc['mean'] *= 12\n        output.loc['std'] *= np.sqrt(12)",
+        "detail": "cmds.hw2_helper",
+        "documentation": {}
+    },
+    {
+        "label": "max_drawdown",
+        "kind": 2,
+        "importPath": "cmds.hw2_helper",
+        "description": "cmds.hw2_helper",
+        "peekOfCode": "def max_drawdown(data, portfolio = None, portfolio_name = 'Portfolio'):\n    if portfolio is None:\n        returns = data\n        output = pd.DataFrame(columns=returns.columns)\n    else:\n        returns = data @ portfolio\n        output = pd.DataFrame(columns=[portfolio_name])\n    cumulative = (returns + 1).cumprod()\n    maximum = cumulative.expanding().max()\n    drawdown = cumulative / maximum - 1",
+        "detail": "cmds.hw2_helper",
+        "documentation": {}
+    },
+    {
+        "label": "stats_tail_risk",
+        "kind": 2,
+        "importPath": "cmds.hw2_helper",
+        "description": "cmds.hw2_helper",
+        "peekOfCode": "def stats_tail_risk(data, portfolio = None, portfolio_name = 'Portfolio', VaR = 0.05):\n    if portfolio is None:\n        returns = data\n    else:\n        returns = data @ portfolio\n    output = returns.agg(['skew',\n                          'kurt'])\n    output.loc['VaR'] = returns.quantile(q = 0.05)\n    output.loc['CVaR'] = returns[returns <= output.loc['VaR']].mean()\n    output = pd.concat([output, max_drawdown(returns,portfolio,portfolio_name)])",
+        "detail": "cmds.hw2_helper",
+        "documentation": {}
+    },
+    {
+        "label": "stats_OLS",
+        "kind": 2,
+        "importPath": "cmds.hw2_helper",
+        "description": "cmds.hw2_helper",
+        "peekOfCode": "def stats_OLS(model,y,x):\n    output = model.params.to_frame(name = y.columns[0])\n    return output",
+        "detail": "cmds.hw2_helper",
+        "documentation": {}
+    },
+    {
+        "label": "tangency_weights",
+        "kind": 2,
+        "importPath": "cmds.portfolio",
+        "description": "cmds.portfolio",
+        "peekOfCode": "def tangency_weights(returns,dropna=True,scale_cov=1):\n    if dropna:\n        returns = returns.dropna()\n    covmat_full = returns.cov()\n    covmat_diag = np.diag(np.diag(covmat_full))\n    covmat = scale_cov * covmat_full + (1-scale_cov) * covmat_diag\n    weights = np.linalg.solve(covmat,returns.mean())\n    weights = weights / weights.sum()\n    return pd.DataFrame(weights, index=returns.columns,columns=['tangency weights'])\ndef performanceMetrics(returns,annualization=1, quantile=.05):",
+        "detail": "cmds.portfolio",
+        "documentation": {}
+    },
+    {
+        "label": "performanceMetrics",
+        "kind": 2,
+        "importPath": "cmds.portfolio",
+        "description": "cmds.portfolio",
+        "peekOfCode": "def performanceMetrics(returns,annualization=1, quantile=.05):\n    metrics = pd.DataFrame(index=returns.columns)\n    metrics['Mean'] = returns.mean() * annualization\n    metrics['Vol'] = returns.std() * np.sqrt(annualization)\n    metrics['Sharpe'] = (returns.mean() / returns.std()) * np.sqrt(annualization)\n    metrics['Min'] = returns.min()\n    metrics['Max'] = returns.max()\n    return metrics\ndef display_correlation(df,list_maxmin=True):\n    corrmat = df.corr()",
+        "detail": "cmds.portfolio",
+        "documentation": {}
+    },
+    {
+        "label": "display_correlation",
+        "kind": 2,
+        "importPath": "cmds.portfolio",
+        "description": "cmds.portfolio",
+        "peekOfCode": "def display_correlation(df,list_maxmin=True):\n    corrmat = df.corr()\n    #ignore self-correlation\n    corrmat[corrmat==1] = None\n    sns.heatmap(corrmat)\n    if list_maxmin:\n        corr_rank = corrmat.unstack().sort_values().dropna()\n        pair_max = corr_rank.index[-1]\n        pair_min = corr_rank.index[0]\n        print(f'MIN Correlation pair is {pair_min}')",
+        "detail": "cmds.portfolio",
+        "documentation": {}
+    },
+    {
+        "label": "maximumDrawdown",
+        "kind": 2,
+        "importPath": "cmds.portfolio",
+        "description": "cmds.portfolio",
+        "peekOfCode": "def maximumDrawdown(returns):\n    cum_returns = (1 + returns).cumprod()\n    rolling_max = cum_returns.cummax()\n    drawdown = (cum_returns - rolling_max) / rolling_max\n    max_drawdown = drawdown.min()\n    end_date = drawdown.idxmin()\n    summary = pd.DataFrame({'Max Drawdown': max_drawdown, 'Bottom': end_date})\n    for col in drawdown:\n        summary.loc[col,'Peak'] = (rolling_max.loc[:end_date[col],col]).idxmax()\n        recovery = (drawdown.loc[end_date[col]:,col])",
+        "detail": "cmds.portfolio",
+        "documentation": {}
+    },
+    {
+        "label": "tailMetrics",
+        "kind": 2,
+        "importPath": "cmds.portfolio",
+        "description": "cmds.portfolio",
+        "peekOfCode": "def tailMetrics(returns, quantile=.05, relative=False, mdd=True):\n    metrics = pd.DataFrame(index=returns.columns)\n    metrics['Skewness'] = returns.skew()\n    metrics['Kurtosis'] = returns.kurtosis()\n    VaR = returns.quantile(quantile)\n    CVaR = (returns[returns < returns.quantile(quantile)]).mean()\n    if relative:\n        VaR = (VaR - returns.mean())/returns.std()\n        CVaR = (CVaR - returns.mean())/returns.std()\n    metrics[f'VaR ({quantile})'] = VaR",
+        "detail": "cmds.portfolio",
+        "documentation": {}
+    },
+    {
+        "label": "get_ols_metrics",
+        "kind": 2,
+        "importPath": "cmds.portfolio",
+        "description": "cmds.portfolio",
+        "peekOfCode": "def get_ols_metrics(regressors, targets, annualization=1, ignorenan=True):\n    # ensure regressors and targets are pandas dataframes, as expected\n    if not isinstance(regressors, pd.DataFrame):\n        regressors = regressors.to_frame()\n    if not isinstance(targets, pd.DataFrame):\n        targets = targets.to_frame()\n    # align the targets and regressors on the same dates\n    df_aligned = targets.join(regressors, how='inner', lsuffix='y ')\n    Y = df_aligned[targets.columns]\n    Xset = df_aligned[regressors.columns]",
+        "detail": "cmds.portfolio",
+        "documentation": {}
+    },
+    {
+        "label": "penalized_reg_limit_gross",
+        "kind": 2,
+        "importPath": "cmds.portfolio",
+        "description": "cmds.portfolio",
+        "peekOfCode": "def penalized_reg_limit_gross(func, X, y, limit=2, penalty=1e-6, fit_intercept=True):\n    wts = np.ones(X.shape[1]) * 100\n    while np.abs(wts).sum()>limit:\n        penalty *= 1.1\n        model = func(alpha=penalty, fit_intercept=fit_intercept).fit(X,y)\n        wts = model.coef_ / model.coef_.sum()\n    return wts, penalty\ndef penalized_reg_limit_X(func, X, y, limit=10, penalty=1e-6, fit_intercept=True):\n    wts = np.ones(X.shape[1]) * 100\n    Nx = np.inf",
+        "detail": "cmds.portfolio",
+        "documentation": {}
+    },
+    {
+        "label": "penalized_reg_limit_X",
+        "kind": 2,
+        "importPath": "cmds.portfolio",
+        "description": "cmds.portfolio",
+        "peekOfCode": "def penalized_reg_limit_X(func, X, y, limit=10, penalty=1e-6, fit_intercept=True):\n    wts = np.ones(X.shape[1]) * 100\n    Nx = np.inf\n    while Nx>limit:\n        penalty *= 1.1\n        model = func(alpha=penalty, fit_intercept=fit_intercept).fit(X,y)\n        wts = model.coef_ / model.coef_.sum()\n        if func is Lasso:\n            Nx = (np.abs(wts)>1e-4).sum()            \n        else:",
+        "detail": "cmds.portfolio",
+        "documentation": {}
+    },
+    {
+        "label": "cluster_corr",
+        "kind": 2,
+        "importPath": "cmds.portfolio",
+        "description": "cmds.portfolio",
+        "peekOfCode": "def cluster_corr(corr_array, inplace=False):\n    \"\"\"\n    Rearranges the correlation matrix, corr_array, so that groups of highly \n    correlated variables are next to eachother \n    Parameters\n    ----------\n    corr_array : pandas.DataFrame or numpy.ndarray\n        a NxN correlation matrix \n    Returns\n    -------",
+        "detail": "cmds.portfolio",
+        "documentation": {}
+    },
+    {
+        "label": "read_excel_default",
+        "kind": 2,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "def read_excel_default(excel_name: str, index_col : int = 0, parse_dates: bool =True, print_sheets: bool = False, sheet_name: str = None, **kwargs):\n    \"\"\"\n    Reads an Excel file and returns a DataFrame with specified options.\n    Parameters:\n    excel_name (str): The path to the Excel file.\n    index_col (int, default=0): Column to use as the row labels of the DataFrame.\n    parse_dates (bool, default=True): Boolean to parse dates.\n    print_sheets (bool, default=False): If True, prints the names and first few rows of all sheets.\n    sheet_name (str or int, default=None): Name or index of the sheet to read. If None, reads the first sheet.\n    **kwargs: Additional arguments passed to `pd.read_excel`.",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "calc_cummulative_returns",
+        "kind": 2,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "def calc_cummulative_returns(\n    returns: Union[pd.DataFrame, pd.Series],\n    return_plot: bool = True,\n    fig_size: tuple = (7, 5),\n    return_series: bool = False,\n    name: str = None,\n    timeframes: Union[None, dict] = None,\n):\n    \"\"\"\n    Calculates cumulative returns from a time series of returns.",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "calc_summary_statistics",
+        "kind": 2,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "def calc_summary_statistics(\n    returns: Union[pd.DataFrame, List],\n    annual_factor: int = None,\n    provided_excess_returns: bool = None,\n    rf: Union[pd.Series, pd.DataFrame] = None,\n    var_quantile: Union[float, List] = .05,\n    timeframes: Union[None, dict] = None,\n    return_tangency_weights: bool = True,\n    correlations: Union[bool, List] = True,\n    keep_columns: Union[list, str] = None,",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "calc_negative_pct",
+        "kind": 2,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "def calc_negative_pct(\n    returns: Union[pd.DataFrame, pd.Series, list],\n    calc_positive: bool = False,\n    keep_columns: Union[list, str] = None,\n    drop_columns: Union[list, str] = None,\n    keep_indexes: Union[list, str] = None,\n    drop_indexes: Union[list, str] = None,\n    drop_before_keep: bool = False,\n):\n    \"\"\"",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "filter_columns_and_indexes",
+        "kind": 2,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "def filter_columns_and_indexes(\n    df: pd.DataFrame,\n    keep_columns: Union[list, str],\n    drop_columns: Union[list, str],\n    keep_indexes: Union[list, str],\n    drop_indexes: Union[list, str],\n    drop_before_keep: bool = False\n):\n    \"\"\"\n    Filters a DataFrame based on specified columns and indexes.",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "calc_cross_section_regression",
+        "kind": 2,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "def calc_cross_section_regression(\n    returns: Union[pd.DataFrame, List],\n    factors: Union[pd.DataFrame, List],\n    annual_factor: int = None,\n    provided_excess_returns: bool = None,\n    rf: pd.Series = None,\n    return_model: bool = False,\n    name: str = None,\n    return_mae: bool = True,\n    intercept_cross_section: bool = True,",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "get_best_and_worst",
+        "kind": 2,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "def get_best_and_worst(\n    summary_statistics: pd.DataFrame,\n    stat: str = 'Annualized Sharpe',\n    return_df: bool = True\n):\n    \"\"\"\n    Identifies the best and worst assets based on a specified statistic.\n    Parameters:\n    summary_statistics (pd.DataFrame): DataFrame containing summary statistics.\n    stat (str, default='Annualized Sharpe'): The statistic to compare assets by.",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "calc_correlations",
+        "kind": 2,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "def calc_correlations(\n    returns: pd.DataFrame,\n    print_highest_lowest: bool = True,\n    matrix_size: Union[int, float] = 7,\n    return_heatmap: bool = True,\n    keep_columns: Union[list, str] = None,\n    drop_columns: Union[list, str] = None,\n    keep_indexes: Union[list, str] = None,\n    drop_indexes: Union[list, str] = None,\n    drop_before_keep: bool = False",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "calc_tangency_weights",
+        "kind": 2,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "def calc_tangency_weights(\n    returns: pd.DataFrame,\n    cov_mat: str = 1,\n    return_graphic: bool = False,\n    return_port_ret: bool = False,\n    target_ret_rescale_weights: Union[None, float] = None,\n    annual_factor: int = 12,\n    name: str = 'Tangency',\n    expected_returns: Union[pd.Series, pd.DataFrame] = None,\n    expected_returns_already_annualized: bool = False",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "calc_equal_weights",
+        "kind": 2,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "def calc_equal_weights(\n    returns: pd.DataFrame,\n    return_graphic: bool = False,\n    return_port_ret: bool = False,\n    target_ret_rescale_weights: Union[float, None] = None,\n    name: str = 'Equal Weights'\n):\n    \"\"\"\n    Calculates equal weights for the portfolio based on the provided returns.\n    Parameters:",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "calc_risk_parity_weights",
+        "kind": 2,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "def calc_risk_parity_weights(\n    returns: pd.DataFrame,\n    return_graphic: bool = False,\n    return_port_ret: bool = False,\n    target_ret_rescale_weights: Union[None, float] = None,\n    name: str = 'Risk Parity'\n):\n    \"\"\"\n    Calculates risk parity portfolio weights based on the variance of each asset.\n    Parameters:",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "calc_gmv_weights",
+        "kind": 2,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "def calc_gmv_weights(\n    returns: pd.DataFrame,\n    return_graphic: bool = False,\n    return_port_ret: bool = False,\n    target_ret_rescale_weights: Union[float, None] = None,\n    name: str = 'GMV'\n):\n    \"\"\"\n    Calculates Global Minimum Variance (GMV) portfolio weights.\n    Parameters:",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "calc_target_ret_weights",
+        "kind": 2,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "def calc_target_ret_weights(\n    target_ret: float,\n    returns: pd.DataFrame,\n    return_graphic: bool = False,\n    return_port_ret: bool = False\n):\n    \"\"\"\n    Calculates the portfolio weights to achieve a target return by combining Tangency and GMV portfolios.\n    Parameters:\n    target_ret (float): Target return for the portfolio.",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "calc_regression",
+        "kind": 2,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "def calc_regression(\n    y: Union[pd.DataFrame, pd.Series],\n    X: Union[pd.DataFrame, pd.Series],\n    intercept: bool = True,\n    annual_factor: Union[None, int] = None,\n    warnings: bool = True,\n    return_model: bool = False,\n    return_fitted_values: bool = False,\n    name_fitted_values: str = None,\n    calc_treynor_info_ratios: bool = True,",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "calc_strategy_oos",
+        "kind": 2,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "def calc_strategy_oos(\n    y: Union[pd.Series, pd.DataFrame],\n    X: Union[pd.Series, pd.DataFrame],\n    intercept: bool = True,\n    rolling_size: Union[None, int] = 60,\n    expanding: bool = False,\n    lag_number: int = 1,\n    weight_multiplier: float = 100,\n    weight_min: Union[None, float] = None,\n    weight_max: Union[None, float] = None,",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "calc_iterative_regression",
+        "kind": 2,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "def calc_iterative_regression(\n    multiple_y: Union[pd.DataFrame, pd.Series],\n    X: Union[pd.DataFrame, pd.Series],\n    annual_factor: Union[None, int] = 12,\n    intercept: bool = True,\n    warnings: bool = True,\n    calc_treynor_info_ratios: bool = True,\n    calc_sortino_ratio: bool = False,\n    keep_columns: Union[list, str] = None,\n    drop_columns: Union[list, str] = None,",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "calc_replication_oos",
+        "kind": 2,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "def calc_replication_oos(\n    y: Union[pd.Series, pd.DataFrame],\n    X: Union[pd.Series, pd.DataFrame],\n    intercept: bool = True,\n    rolling_size: Union[None, int] = 60,\n    expanding: bool = False,\n    return_r_squared_oos: float = False,\n    lag_number: int = 1,\n    keep_columns: Union[list, str] = None,\n    drop_columns: Union[list, str] = None,",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "calc_replication_oos_not_lagged_features",
+        "kind": 2,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "def calc_replication_oos_not_lagged_features(\n    y: Union[pd.Series, pd.DataFrame],\n    X: Union[pd.Series, pd.DataFrame],\n    intercept: bool = True,\n    rolling_size: Union[None, int] = 60,\n    return_r_squared_oos: float = False,\n    r_squared_time_series: bool = False,\n    return_parameters: bool = True,\n    oos: int = 1,\n    keep_columns: Union[list, str] = None,",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "create_portfolio",
+        "kind": 2,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "def create_portfolio(\n    returns: pd.DataFrame,\n    weights: Union[dict, list],\n    port_name: Union[None, str] = None\n):\n    \"\"\"\n    Creates a portfolio by applying the specified weights to the asset returns.\n    Parameters:\n    returns (pd.DataFrame): Time series of asset returns.\n    weights (dict or list): Weights to apply to the returns. If a list is provided, it will be converted into a dictionary.",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "calc_ewma_volatility",
+        "kind": 2,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "def calc_ewma_volatility(\n        excess_returns: pd.Series,\n        theta : float = 0.94,\n        initial_vol : float = .2 / np.sqrt(252)\n    ) -> pd.Series:\n    var_t0 = initial_vol ** 2\n    ewma_var = [var_t0]\n    for i in range(len(excess_returns.index)):\n        new_ewma_var = ewma_var[-1] * theta + (excess_returns.iloc[i] ** 2) * (1 - theta)\n        ewma_var.append(new_ewma_var)",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "calc_garch_volatility",
+        "kind": 2,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "def calc_garch_volatility(\n        excess_returs: pd.Series,\n        p: int = 1,\n        q: int = 1\n    ) -> pd.Series:\n    model = arch_model(excess_returs, vol='Garch', p=p, q=q)\n    fitted_model = model.fit(disp='off')\n    fitted_values = fitted_model.conditional_volatility\n    return fitted_values\ndef calc_garch_volatility(",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "calc_garch_volatility",
+        "kind": 2,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "def calc_garch_volatility(\n        excess_returs: pd.Series,\n        p: int = 1,\n        q: int = 1\n    ):\n    model = arch_model(excess_returs, vol='Garch', p=p, q=q)\n    fitted_model = model.fit(disp='off')\n    fitted_values = fitted_model.conditional_volatility\n    return pd.Series(fitted_values, index=excess_returs.index)\ndef calc_var_cvar_summary(",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "calc_var_cvar_summary",
+        "kind": 2,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "def calc_var_cvar_summary(\n    returns: Union[pd.Series, pd.DataFrame],\n    quantile: Union[None, float] = .05,\n    window: Union[None, str] = None,\n    return_hit_ratio: bool = False,\n    filter_first_hit_ratio_date: Union[None, str, datetime.date] = None,\n    return_stats: Union[str, list] = ['Returns', 'VaR', 'CVaR', 'Vol'],\n    full_time_sample: bool = False,\n    z_score: float = None,\n    shift: int = 1,",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "calc_rolling_oos_port",
+        "kind": 2,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "def calc_rolling_oos_port(\n    returns: pd.DataFrame,\n    weights_func,\n    window: Union[None, int] = None,\n    weights_func_params: dict = {},\n    port_name: str = 'Portfolio OOS',\n    expanding: bool = False,\n    keep_columns: Union[list, str] = None,\n    drop_columns: Union[list, str] = None,\n    keep_indexes: Union[list, str] = None,",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "calc_fx_exc_ret",
+        "kind": 2,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "def calc_fx_exc_ret(\n    fx_rates: pd.DataFrame,\n    rf_rates: pd.DataFrame,\n    transform_to_log_fx_rates: bool = True,\n    transform_to_log_rf_rates: bool = True,\n    rf_to_fx: dict = None,\n    base_rf: str = None,\n    base_rf_series: Union[pd.Series, pd.DataFrame] = None,\n    annual_factor: Union[int, None] = None,\n    return_exc_ret: bool = False,",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "calc_fx_regression",
+        "kind": 2,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "def calc_fx_regression(\n    fx_rates: pd.DataFrame,\n    rf_rates: pd.DataFrame,\n    transform_to_log_fx_rates: bool = True,\n    transform_to_log_rf_rates: bool = True,\n    rf_to_fx: dict = None,\n    base_rf: str = None,\n    base_rf_series: Union[pd.Series, pd.DataFrame] = None,\n    annual_factor: Union[int, None] = None,\n    keep_columns: Union[list, str] = None,",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "calc_dynamic_carry_trade",
+        "kind": 2,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "def calc_dynamic_carry_trade(\n    fx_rates: pd.DataFrame,\n    rf_rates: pd.DataFrame,\n    transform_to_log_fx_rates: bool = True,\n    transform_to_log_rf_rates: bool = True,\n    rf_to_fx: dict = None,\n    base_rf: str = None,\n    base_rf_series: Union[pd.Series, pd.DataFrame] = None,\n    annual_factor: Union[int, None] = None,\n    return_premium_series: bool = False,",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "pd.options.display.float_format",
+        "kind": 5,
+        "importPath": "cmds.portfolio_management_helper",
+        "description": "cmds.portfolio_management_helper",
+        "peekOfCode": "pd.options.display.float_format = \"{:,.4f}\".format\nfrom typing import Union, List\nfrom pandas import Timestamp\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nimport statsmodels.api as sm\nfrom sklearn.linear_model import LinearRegression\nimport warnings\nwarnings.filterwarnings(\"ignore\")\nfrom collections import defaultdict",
+        "detail": "cmds.portfolio_management_helper",
+        "documentation": {}
+    },
+    {
+        "label": "next_business_day",
+        "kind": 2,
+        "importPath": "cmds.utils",
+        "description": "cmds.utils",
+        "peekOfCode": "def next_business_day(DATE):\n    ONE_DAY = datetime.timedelta(days=1)\n    HOLIDAYS_US = holidays.US()\n    next_day = DATE\n    while next_day.weekday() in holidays.WEEKEND or next_day in HOLIDAYS_US:\n        next_day += ONE_DAY\n    return next_day",
+        "detail": "cmds.utils",
         "documentation": {}
     },
     {
