@@ -1,0 +1,400 @@
+[
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "glob",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "glob",
+        "description": "glob",
+        "detail": "glob",
+        "documentation": {}
+    },
+    {
+        "label": "gymnasium",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "gymnasium",
+        "description": "gymnasium",
+        "detail": "gymnasium",
+        "documentation": {}
+    },
+    {
+        "label": "spaces",
+        "importPath": "gymnasium",
+        "description": "gymnasium",
+        "isExtraImport": true,
+        "detail": "gymnasium",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "torch",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torch",
+        "description": "torch",
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "torch.nn",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torch.nn",
+        "description": "torch.nn",
+        "detail": "torch.nn",
+        "documentation": {}
+    },
+    {
+        "label": "Normal",
+        "importPath": "torch.distributions",
+        "description": "torch.distributions",
+        "isExtraImport": true,
+        "detail": "torch.distributions",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "csv",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "csv",
+        "description": "csv",
+        "detail": "csv",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "calc_norm",
+        "kind": 2,
+        "importPath": "OHLC.OHLC",
+        "description": "OHLC.OHLC",
+        "peekOfCode": "def calc_norm(series, window=20):\n    \"\"\"\n    Calculates rolling normalization: (X - Min) / (Max - Min)\n    \"\"\"\n    roll_min = series.rolling(window).min()\n    roll_max = series.rolling(window).max()\n    denom = roll_max - roll_min\n    # Handle division by zero (ignore warnings, replace inf with nan)\n    with np.errstate(divide='ignore', invalid='ignore'):\n        res = (series - roll_min) / denom",
+        "detail": "OHLC.OHLC",
+        "documentation": {}
+    },
+    {
+        "label": "calculate_34_factors",
+        "kind": 2,
+        "importPath": "OHLC.OHLC",
+        "description": "OHLC.OHLC",
+        "peekOfCode": "def calculate_34_factors(df):\n    # ... (这部分代码保持不变) ...\n    # Preprocessing: Convert column names to lowercase\n    df.columns = [c.lower() for c in df.columns]\n    for col in ['open', 'high', 'low', 'close', 'volume']:\n        if col in df.columns:\n            df[col] = pd.to_numeric(df[col], errors='coerce')\n    o = df['open']\n    h = df['high']\n    l = df['low']",
+        "detail": "OHLC.OHLC",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "OHLC.OHLC",
+        "description": "OHLC.OHLC",
+        "peekOfCode": "def main():\n    # 1. Define Paths\n    script_dir = os.path.dirname(os.path.abspath(__file__))\n    factor_output_dir = os.path.join(script_dir, 'factor_outputs')\n    os.makedirs(factor_output_dir, exist_ok=True)\n    # data_file: consolidated CSV\n    data_file = os.path.join(script_dir, '..', 'data.csv')\n    if not os.path.exists(data_file):\n        print(f\"Data file not found: {data_file}\")\n        return",
+        "detail": "OHLC.OHLC",
+        "documentation": {}
+    },
+    {
+        "label": "MultiAssetTradingEnv",
+        "kind": 6,
+        "importPath": "RL_model.RL_model_v2",
+        "description": "RL_model.RL_model_v2",
+        "peekOfCode": "class MultiAssetTradingEnv(gym.Env):\n    \"\"\"\n    Multi-asset trading environment with continuous actions, using Gymnasium API.\n    - State: [features_t, position_value_pct, cash_pct]\n    - Action: Box[-1,1] of size N_assets\n    - Reward: portfolio return from t to t+1 (after trades and transaction costs)\n    \"\"\"\n    metadata = {\"render_modes\": [\"human\"]}\n    def __init__(\n        self,",
+        "detail": "RL_model.RL_model_v2",
+        "documentation": {}
+    },
+    {
+        "label": "PolicyValueNet",
+        "kind": 6,
+        "importPath": "RL_model.RL_model_v2",
+        "description": "RL_model.RL_model_v2",
+        "peekOfCode": "class PolicyValueNet(nn.Module):\n    \"\"\"\n    Shared base network with separate policy (mean) and value heads.\n    The policy outputs the mean of a Gaussian over actions.\n    \"\"\"\n    def __init__(self, obs_dim, action_dim, hidden_sizes=(128, 128)):\n        super().__init__()\n        layers = []\n        input_dim = obs_dim\n        for h in hidden_sizes:",
+        "detail": "RL_model.RL_model_v2",
+        "documentation": {}
+    },
+    {
+        "label": "PPOAgent",
+        "kind": 6,
+        "importPath": "RL_model.RL_model_v2",
+        "description": "RL_model.RL_model_v2",
+        "peekOfCode": "class PPOAgent:\n    \"\"\"PPO agent with clipped surrogate objective and GAE for advantage estimation.\"\"\"\n    def __init__(\n        self,\n        obs_dim,\n        action_dim,\n        lr=3e-4,\n        gamma=0.99,\n        lam=0.95,\n        clip_ratio=0.2,",
+        "detail": "RL_model.RL_model_v2",
+        "documentation": {}
+    },
+    {
+        "label": "build_price_and_features",
+        "kind": 2,
+        "importPath": "RL_model.RL_model_v2",
+        "description": "RL_model.RL_model_v2",
+        "peekOfCode": "def build_price_and_features(\n    data_path: str = \"data.csv\",\n    vol_path: str = \"volatility_forecasts.csv\",\n    a6_path: str = \"A6.csv\",\n    a101_path: str = \"A101.csv\",\n    factor_dir: str = \"factor_outputs\",\n    tickers=(\"VOO\", \"IEMG\", \"GLDM\", \"TLT\", \"HYG\"),\n):\n    \"\"\"\n    Build the price matrix (for reward calculation) and the feature matrix (state signals)",
+        "detail": "RL_model.RL_model_v2",
+        "documentation": {}
+    },
+    {
+        "label": "train_ppo_on_env",
+        "kind": 2,
+        "importPath": "RL_model.RL_model_v2",
+        "description": "RL_model.RL_model_v2",
+        "peekOfCode": "def train_ppo_on_env(\n    env: MultiAssetTradingEnv,\n    agent: PPOAgent,\n    total_steps: int = 50_000,\n    rollout_horizon: int = 512,\n):\n    \"\"\"\n    Train PPO agent on the given environment.\n    Args:\n        env: Trading environment (in-sample data)",
+        "detail": "RL_model.RL_model_v2",
+        "documentation": {}
+    },
+    {
+        "label": "backtest_on_env",
+        "kind": 2,
+        "importPath": "RL_model.RL_model_v2",
+        "description": "RL_model.RL_model_v2",
+        "peekOfCode": "def backtest_on_env(\n    env: MultiAssetTradingEnv,\n    agent: PPOAgent,\n    index: pd.DatetimeIndex,\n    freq_per_year: int = 252 * 390,\n    plot: bool = True,\n    save_prefix: str | None = None,\n):\n    \"\"\"\n    Run frozen PPO policy on test environment and compute performance stats.",
+        "detail": "RL_model.RL_model_v2",
+        "documentation": {}
+    },
+    {
+        "label": "SEED",
+        "kind": 5,
+        "importPath": "RL_model.RL_model_v2",
+        "description": "RL_model.RL_model_v2",
+        "peekOfCode": "SEED = 40\nimport random\nrandom.seed(SEED)\nnp.random.seed(SEED)\ntorch.manual_seed(SEED)\ntorch.cuda.manual_seed_all(SEED)\ndef build_price_and_features(\n    data_path: str = \"data.csv\",\n    vol_path: str = \"volatility_forecasts.csv\",\n    a6_path: str = \"A6.csv\",",
+        "detail": "RL_model.RL_model_v2",
+        "documentation": {}
+    },
+    {
+        "label": "TICKERS",
+        "kind": 5,
+        "importPath": "RL_model.RL_model_v2",
+        "description": "RL_model.RL_model_v2",
+        "peekOfCode": "TICKERS = (\"VOO\", \"IEMG\", \"GLDM\", \"TLT\", \"HYG\")\nprices, features, idx, feat_names = build_price_and_features(\n    data_path=\"../data.csv\",\n    vol_path=\"../volatility_forecasts.csv\",\n    a6_path=\"../A6.csv\",\n    a101_path=\"../A101.csv\",\n    factor_dir=\"../OHLC/factor_outputs\",\n    tickers=TICKERS,\n)\nprint(\"\\nFinal aligned data shapes:\")",
+        "detail": "RL_model.RL_model_v2",
+        "documentation": {}
+    },
+    {
+        "label": "T_total",
+        "kind": 5,
+        "importPath": "RL_model.RL_model_v2",
+        "description": "RL_model.RL_model_v2",
+        "peekOfCode": "T_total = prices.shape[0]\nsplit_idx = int(T_total * 0.7)\nprices_train, features_train, idx_train = prices[:split_idx], features[:split_idx], idx[:split_idx]\nprices_test, features_test, idx_test = prices[split_idx:], features[split_idx:], idx[split_idx:]\nprint(\"Train/test split:\")\nprint(f\"  train: {len(idx_train)} steps from {idx_train[0]} to {idx_train[-1]}\")\nprint(f\"  test:  {len(idx_test)} steps from {idx_test[0]} to {idx_test[-1]}\")\n# Build environments\nenv_train = MultiAssetTradingEnv(prices=prices_train, features=features_train, initial_cash=100000.0, transaction_cost=0.0)\nenv_test = MultiAssetTradingEnv(prices=prices_test, features=features_test, initial_cash=100000.0, transaction_cost=0.0)",
+        "detail": "RL_model.RL_model_v2",
+        "documentation": {}
+    },
+    {
+        "label": "split_idx",
+        "kind": 5,
+        "importPath": "RL_model.RL_model_v2",
+        "description": "RL_model.RL_model_v2",
+        "peekOfCode": "split_idx = int(T_total * 0.7)\nprices_train, features_train, idx_train = prices[:split_idx], features[:split_idx], idx[:split_idx]\nprices_test, features_test, idx_test = prices[split_idx:], features[split_idx:], idx[split_idx:]\nprint(\"Train/test split:\")\nprint(f\"  train: {len(idx_train)} steps from {idx_train[0]} to {idx_train[-1]}\")\nprint(f\"  test:  {len(idx_test)} steps from {idx_test[0]} to {idx_test[-1]}\")\n# Build environments\nenv_train = MultiAssetTradingEnv(prices=prices_train, features=features_train, initial_cash=100000.0, transaction_cost=0.0)\nenv_test = MultiAssetTradingEnv(prices=prices_test, features=features_test, initial_cash=100000.0, transaction_cost=0.0)\n# Initialize agent",
+        "detail": "RL_model.RL_model_v2",
+        "documentation": {}
+    },
+    {
+        "label": "env_train",
+        "kind": 5,
+        "importPath": "RL_model.RL_model_v2",
+        "description": "RL_model.RL_model_v2",
+        "peekOfCode": "env_train = MultiAssetTradingEnv(prices=prices_train, features=features_train, initial_cash=100000.0, transaction_cost=0.0)\nenv_test = MultiAssetTradingEnv(prices=prices_test, features=features_test, initial_cash=100000.0, transaction_cost=0.0)\n# Initialize agent\nppo_agent = PPOAgent(obs_dim=env_train.obs_dim, action_dim=env_train.n_assets, lr=3e-4, gamma=0.99, lam=0.95, clip_ratio=0.2)\ntrain_ppo_on_env(env_train, ppo_agent, total_steps=50_000, rollout_horizon=512)\ndf_account_value, stats = backtest_on_env(\n    env_test,\n    ppo_agent,\n    idx_test,\n    freq_per_year=252 * 390,",
+        "detail": "RL_model.RL_model_v2",
+        "documentation": {}
+    },
+    {
+        "label": "env_test",
+        "kind": 5,
+        "importPath": "RL_model.RL_model_v2",
+        "description": "RL_model.RL_model_v2",
+        "peekOfCode": "env_test = MultiAssetTradingEnv(prices=prices_test, features=features_test, initial_cash=100000.0, transaction_cost=0.0)\n# Initialize agent\nppo_agent = PPOAgent(obs_dim=env_train.obs_dim, action_dim=env_train.n_assets, lr=3e-4, gamma=0.99, lam=0.95, clip_ratio=0.2)\ntrain_ppo_on_env(env_train, ppo_agent, total_steps=50_000, rollout_horizon=512)\ndf_account_value, stats = backtest_on_env(\n    env_test,\n    ppo_agent,\n    idx_test,\n    freq_per_year=252 * 390,\n    plot=True,",
+        "detail": "RL_model.RL_model_v2",
+        "documentation": {}
+    },
+    {
+        "label": "ppo_agent",
+        "kind": 5,
+        "importPath": "RL_model.RL_model_v2",
+        "description": "RL_model.RL_model_v2",
+        "peekOfCode": "ppo_agent = PPOAgent(obs_dim=env_train.obs_dim, action_dim=env_train.n_assets, lr=3e-4, gamma=0.99, lam=0.95, clip_ratio=0.2)\ntrain_ppo_on_env(env_train, ppo_agent, total_steps=50_000, rollout_horizon=512)\ndf_account_value, stats = backtest_on_env(\n    env_test,\n    ppo_agent,\n    idx_test,\n    freq_per_year=252 * 390,\n    plot=True,\n    save_prefix=\"ppo_oos\",\n)",
+        "detail": "RL_model.RL_model_v2",
+        "documentation": {}
+    },
+    {
+        "label": "Curve",
+        "kind": 6,
+        "importPath": "presentation.generate_plots",
+        "description": "presentation.generate_plots",
+        "peekOfCode": "class Curve:\n    name: str\n    dates: List[datetime]\n    values: List[float]\n    returns: List[float]\ndef load_curve(\n    path: Path,\n    label: str,\n    value_col: str = \"account_value\",\n    return_col: str | None = \"return\",",
+        "detail": "presentation.generate_plots",
+        "documentation": {}
+    },
+    {
+        "label": "load_curve",
+        "kind": 2,
+        "importPath": "presentation.generate_plots",
+        "description": "presentation.generate_plots",
+        "peekOfCode": "def load_curve(\n    path: Path,\n    label: str,\n    value_col: str = \"account_value\",\n    return_col: str | None = \"return\",\n    date_col: str = \"date\",\n) -> Curve:\n    dates: List[datetime] = []\n    values: List[float] = []\n    returns: List[float] = []",
+        "detail": "presentation.generate_plots",
+        "documentation": {}
+    },
+    {
+        "label": "compute_stats",
+        "kind": 2,
+        "importPath": "presentation.generate_plots",
+        "description": "presentation.generate_plots",
+        "peekOfCode": "def compute_stats(curve: Curve) -> dict:\n    acc = curve.values\n    rets = curve.returns\n    n = len(acc)\n    total_return = acc[-1] / acc[0] - 1.0 if n > 1 else float(\"nan\")\n    ann_return = (1.0 + total_return) ** (FREQ_PER_YEAR / n) - 1.0 if n > 1 else float(\"nan\")\n    mean_rets = sum(rets) / n\n    var_rets = sum((r - mean_rets) ** 2 for r in rets) / n\n    ann_vol = math.sqrt(var_rets) * math.sqrt(FREQ_PER_YEAR)\n    sharpe = ann_return / ann_vol if ann_vol > 0 else float(\"nan\")",
+        "detail": "presentation.generate_plots",
+        "documentation": {}
+    },
+    {
+        "label": "svg_line_chart",
+        "kind": 2,
+        "importPath": "presentation.generate_plots",
+        "description": "presentation.generate_plots",
+        "peekOfCode": "def svg_line_chart(curves: List[Curve], out_path: Path, title: str, normalize: bool = True):\n    width, height = 1100, 560\n    margin_left, margin_right, margin_top, margin_bottom = 70, 40, 50, 60\n    plot_w = width - margin_left - margin_right\n    plot_h = height - margin_top - margin_bottom\n    all_dates = [d for c in curves for d in c.dates]\n    min_ts = min(all_dates).timestamp()\n    max_ts = max(all_dates).timestamp()\n    ts_span = max_ts - min_ts or 1.0\n    all_vals = []",
+        "detail": "presentation.generate_plots",
+        "documentation": {}
+    },
+    {
+        "label": "svg_metrics",
+        "kind": 2,
+        "importPath": "presentation.generate_plots",
+        "description": "presentation.generate_plots",
+        "peekOfCode": "def svg_metrics(stats: List[dict], out_path: Path):\n    width, height = 1100, 660\n    margin_left, margin_right, margin_top, margin_bottom = 140, 40, 60, 60\n    plot_w = width - margin_left - margin_right\n    rows = [\n        (\"Annual return (%)\", [s[\"annual_return\"] * 100 for s in stats]),\n        (\"Sharpe\", [s[\"sharpe\"] for s in stats]),\n        (\"Max drawdown (%)\", [s[\"max_drawdown\"] * 100 for s in stats]),\n    ]\n    labels = [s[\"name\"] for s in stats]",
+        "detail": "presentation.generate_plots",
+        "documentation": {}
+    },
+    {
+        "label": "png_equity",
+        "kind": 2,
+        "importPath": "presentation.generate_plots",
+        "description": "presentation.generate_plots",
+        "peekOfCode": "def png_equity(curves: List[Curve], out_path: Path, title: str):\n    \"\"\"Generate PNG using matplotlib if available; otherwise warn and skip.\"\"\"\n    try:\n        import matplotlib.pyplot as plt  # type: ignore\n    except Exception as exc:  # pragma: no cover - optional dependency\n        print(f\"[WARN] PNG generation skipped for {out_path.name}: matplotlib not available ({exc})\")\n        return\n    plt.figure(figsize=(10, 5))\n    for curve in curves:\n        base = curve.values[0]",
+        "detail": "presentation.generate_plots",
+        "documentation": {}
+    },
+    {
+        "label": "png_metrics",
+        "kind": 2,
+        "importPath": "presentation.generate_plots",
+        "description": "presentation.generate_plots",
+        "peekOfCode": "def png_metrics(stats: List[dict], out_path: Path):\n    try:\n        import matplotlib.pyplot as plt  # type: ignore\n    except Exception as exc:  # pragma: no cover - optional dependency\n        print(f\"[WARN] PNG generation skipped for {out_path.name}: matplotlib not available ({exc})\")\n        return\n    labels = [s[\"name\"] for s in stats]\n    ann_ret = [s[\"annual_return\"] * 100 for s in stats]\n    sharpe = [s[\"sharpe\"] for s in stats]\n    max_dd = [s[\"max_drawdown\"] * 100 for s in stats]",
+        "detail": "presentation.generate_plots",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "presentation.generate_plots",
+        "description": "presentation.generate_plots",
+        "peekOfCode": "def main():\n    PLOT_DIR.mkdir(parents=True, exist_ok=True)\n    # RL methods\n    method_files = [\n        (\"RL-Base\", ROOT / \"RL-Base\" / \"ppo_oos_account_value.csv\"),\n        (\"RL-LSTM\", ROOT / \"RL-LSTM\" / \"ppo_oos_account_value.csv\"),\n        (\"RL-Sharpe\", ROOT / \"RL-Sharpe\" / \"ppo_oos_account_value.csv\"),\n    ]\n    curves = []\n    stats = []",
+        "detail": "presentation.generate_plots",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "kind": 5,
+        "importPath": "presentation.generate_plots",
+        "description": "presentation.generate_plots",
+        "peekOfCode": "ROOT = Path(__file__).resolve().parents[1]\nPLOT_DIR = ROOT / \"presentation\" / \"plot\"\nFREQ_PER_YEAR = 252 * 390  # trading minutes per year for annualization\n@dataclass\nclass Curve:\n    name: str\n    dates: List[datetime]\n    values: List[float]\n    returns: List[float]\ndef load_curve(",
+        "detail": "presentation.generate_plots",
+        "documentation": {}
+    },
+    {
+        "label": "PLOT_DIR",
+        "kind": 5,
+        "importPath": "presentation.generate_plots",
+        "description": "presentation.generate_plots",
+        "peekOfCode": "PLOT_DIR = ROOT / \"presentation\" / \"plot\"\nFREQ_PER_YEAR = 252 * 390  # trading minutes per year for annualization\n@dataclass\nclass Curve:\n    name: str\n    dates: List[datetime]\n    values: List[float]\n    returns: List[float]\ndef load_curve(\n    path: Path,",
+        "detail": "presentation.generate_plots",
+        "documentation": {}
+    },
+    {
+        "label": "FREQ_PER_YEAR",
+        "kind": 5,
+        "importPath": "presentation.generate_plots",
+        "description": "presentation.generate_plots",
+        "peekOfCode": "FREQ_PER_YEAR = 252 * 390  # trading minutes per year for annualization\n@dataclass\nclass Curve:\n    name: str\n    dates: List[datetime]\n    values: List[float]\n    returns: List[float]\ndef load_curve(\n    path: Path,\n    label: str,",
+        "detail": "presentation.generate_plots",
+        "documentation": {}
+    }
+]
